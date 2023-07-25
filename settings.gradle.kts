@@ -1,4 +1,4 @@
-rootProject.name = "minestom-ce"
+rootProject.name = "AetherMC"
 
 include("testing")
 include("code-generators")
@@ -6,3 +6,4 @@ include("code-generators")
 //include("jcstress-tests")
 
 include("demo")
+include("server-test")
