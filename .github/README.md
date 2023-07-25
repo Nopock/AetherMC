@@ -10,7 +10,54 @@ AetherMC is currently in development, you may be able to get a build from me if 
 > It doesn't contain any code from mojang
 > 
 > You can find more details [HERE](https://minestom.net/)
-# Feature
+# To-Do List
+This is the To-Do List for AetherMC before the first full release. You can build the project whenever and test it out for yourself!
+- Regions
+  - [ ] Saving Regions
+  - [ ] Loading Regions
+  - [ ] Region BoundingBoxes
+  - [ ] Region Events
+- Chunks
+  - [ ] Chunk Saving
+  - [ ] Saving Directional Blockstates
+  - [ ] Chunk Borders
+- Plugins
+  - [ ] Make Sure Plugin's Load Correctly
+  - [ ] Expand the API for Developers
+- Worlds
+  - [ ] World Creator
+  - [ ] World Saving
+  - [ ] World Deleting
+  - [ ] World Unloading
+  - [ ] World Loading
+- Lighting Engine
+  - [ ] Rewrite the Whole LightingEngine
+  - [ ] Fix Dark Chunks
+  - [ ] Parallel Light Updates
+  - [ ] Batch Light Updates
+  - [ ] Fix Lighting Updates (Literally takes like 10 seconds to compute 50 chunks of light)
+  - [ ] Add Light Source Blocks (Torch, Sea Lantern, ect)
+- Blocks
+  - [ ] BlockStates
+  - [ ] New Methods (#getWorld(), #getChunk(), #getChunkBorder(), #isInsideRegion(Region region), ect)
+  - [ ] Floating Torches, Signs, ect
+- Events
+  - [ ] Events rewrite
+  - [ ] `Async` and `Sync` events (`AsyncBlockBreakEvent` and `BlockBreakEvent`)
+- Misc
+  - [ ] Fix Ram Issue (Using up around 5GB without any plugins, this is due to the current LightingEngine though)
+  - [ ] Add Console Commands
+  - [ ] Opped Players
+  - [ ] Admin Commands (/ban, /tempban, /mute, /tempmute, ect)
+  - [ ] Locations (Replaces `Pos` and `Point` in Minestom API)
+  - [ ] ParticleUtils? (Drawing Spheres, Triangles, and other shapes)
+  - [ ] Block Drops (😭)
+- Suggestions
+  - [ ] Spark Profiler Integration
+  - [ ] World Noise Generation (Not Currently in the main API)
+
+ETA: Unknown
+# Features
 AetherMC provides many API's at your disposal to improve and create a lagless minecraft server!
 - Multi Threading
   - Setting Blocks, Updating Light, Chunk Loading, Chunk Unloading is all Asynchronous
