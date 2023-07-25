@@ -249,11 +249,7 @@ non-sealed class EventNodeImpl<T extends Event> implements EventNode<T> {
         var nextNodes = graph.children();
         for (Iterator<? extends @NotNull Graph> iterator = nextNodes.iterator(); iterator.hasNext(); ) {
             Graph next = iterator.next();
-            if (iterator.hasNext()) {
-                genToStringTree(buffer, childrenPrefix + '├' + '─' + " ", childrenPrefix + '│' + "   ", next);
-            } else {
-                genToStringTree(buffer, childrenPrefix + '└' + '─' + " ", childrenPrefix + "    ", next);
-            }
+            //genToStringTree(buffer, childrenPrefix + '└' + '─' + " ", childrenPrefix + "    ", next);
         }
     }
 
