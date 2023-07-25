@@ -1,5 +1,6 @@
 package net.minestom.server.entity.hologram;
 
+import net.aethermc.AetherMC;
 import net.kyori.adventure.text.Component;
 import net.minestom.server.Viewable;
 import net.minestom.server.coordinate.Pos;
@@ -16,6 +17,7 @@ import java.util.Set;
 /**
  * Represents an invisible armor stand showing a {@link Component}.
  */
+@AetherMC(since = "1.0.0")
 public class Hologram implements Viewable {
 
     private static final float OFFSET_Y = -0.9875f;

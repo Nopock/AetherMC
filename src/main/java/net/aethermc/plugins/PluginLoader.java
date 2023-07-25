@@ -1,5 +1,7 @@
 package net.aethermc.plugins;
 
+import net.aethermc.AetherMC;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,6 +10,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
+@AetherMC(since = "1.0.0")
 public class PluginLoader {
 
     public synchronized static RegisteredPlugin registerPlugin(File file) {

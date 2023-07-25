@@ -1,11 +1,15 @@
 package net.aethermc;
 
+import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
- * Used for AetherMC implementation into the main API.
+ * Will be annotated on classes / methods that AetherMC has implemented
  */
+@Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface AetherMC {
+    String since();
 }

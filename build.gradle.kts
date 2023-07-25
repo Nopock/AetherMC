@@ -120,15 +120,15 @@ tasks {
     }
 
     publishing.publications.create<MavenPublication>("maven") {
-        groupId = "dev.hollowcube"
-        artifactId = "minestom-ce"
+        groupId = "me.outspending"
+        artifactId = "AetherMC"
         version = project.version.toString()
 
         from(project.components["java"])
 
         pom {
-            name.set("minestom-ce")
-            description.set("Lightweight and multi-threaded 1.19.3 Minecraft server")
+            name.set("AetherMC")
+            description.set("Lightweight and multi-threaded 1.20.1 Minecraft server")
             url.set("https://github.com/hollow-cube/minestom-ce")
 
             licenses {

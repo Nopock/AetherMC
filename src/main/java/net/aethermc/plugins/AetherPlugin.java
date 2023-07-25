@@ -1,5 +1,8 @@
 package net.aethermc.plugins;
 
+import net.aethermc.AetherMC;
+
+@AetherMC(since = "1.0.0")
 public abstract class AetherPlugin {
 
     private RegisteredPlugin plugin;
