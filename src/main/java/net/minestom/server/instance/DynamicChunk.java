@@ -2,6 +2,7 @@ package net.minestom.server.instance;
 
 import com.extollit.gaming.ai.path.model.ColumnarOcclusionFieldList;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.aethermc.AetherMC;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.coordinate.Point;
 import net.minestom.server.coordinate.Vec;
@@ -206,6 +207,7 @@ public class DynamicChunk extends Chunk {
     }
 
     private @NotNull ChunkDataPacket createChunkPacket() {
+        System.out.println("Creating Chunk packet...");
         final NBTCompound heightmapsNBT;
         // TODO: don't hardcode heightmaps
         // Heightmap
@@ -226,6 +228,7 @@ public class DynamicChunk extends Chunk {
         }
         // Data
 
+        System.out.println("Creating Chunk data...");
         final byte[] data;
         synchronized (this) {
             data = ObjectPool.PACKET_POOL.use(buffer ->
@@ -235,12 +238,13 @@ public class DynamicChunk extends Chunk {
         }
 
         if (this instanceof LightingChunk light) {
+            System.out.println("Regenerating light for chunk " + chunkX + " " + chunkZ);
             if (light.lightCache.isValid()) {
+                System.out.println("Using cached light for chunk " + chunkX + " " + chunkZ);
                 return new ChunkDataPacket(chunkX, chunkZ,
                         new ChunkData(heightmapsNBT, data, entries),
-                        createLightData(true));
+                        createLightData(false));
             } else {
-                // System.out.println("Regenerating light for chunk " + chunkX + " " + chunkZ);
                 LightingChunk.updateAfterGeneration(light);
                 return new ChunkDataPacket(chunkX, chunkZ,
                         new ChunkData(heightmapsNBT, data, entries),
@@ -248,9 +252,10 @@ public class DynamicChunk extends Chunk {
             }
         }
 
+        System.out.println("InstanceOf check failed for chunk " + chunkX + " " + chunkZ);
         return new ChunkDataPacket(chunkX, chunkZ,
                 new ChunkData(heightmapsNBT, data, entries),
-                createLightData(true)
+                createLightData(false)
         );
     }
 
@@ -270,8 +275,8 @@ public class DynamicChunk extends Chunk {
                 emptySkyMask, emptyBlockMask,
                 skyLights, blockLights);
     }
-
-    protected LightData createLightData(boolean sendLater) {
+    @AetherMC(since = "1.0.0")
+    protected LightData createLightData(boolean loadLater) {
         BitSet skyMask = new BitSet();
         BitSet blockMask = new BitSet();
         BitSet emptySkyMask = new BitSet();
@@ -297,11 +302,13 @@ public class DynamicChunk extends Chunk {
                 emptyBlockMask.set(index);
             }
         }
-        return new LightData(
+
+        LightData data = new LightData(
                 skyMask, blockMask,
                 emptySkyMask, emptyBlockMask,
                 skyLights, blockLights
         );
+        return data;
     }
 
     @Override
