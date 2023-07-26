@@ -1,8 +1,10 @@
 package net.minestom.server.instance;
 
+import net.aethermc.AetherMC;
 import net.minestom.server.Tickable;
 import net.minestom.server.Viewable;
 import net.minestom.server.coordinate.Point;
+import net.minestom.server.coordinate.Pos;
 import net.minestom.server.coordinate.Vec;
 import net.minestom.server.entity.Player;
 import net.minestom.server.entity.pathfinding.PFColumnarSpace;
@@ -298,6 +300,21 @@ public abstract class Chunk implements Block.Getter, Block.Setter, Biome.Getter,
     @Override
     public @NotNull TagHandler tagHandler() {
         return tagHandler;
+    }
+
+    @AetherMC(since = "1.0.0")
+    public @NotNull Pos getCenter() {
+        return new Pos(getChunkX() * CHUNK_SIZE_X + CHUNK_SIZE_X / 2, 0, getChunkZ() * CHUNK_SIZE_Z + CHUNK_SIZE_Z / 2);
+    }
+
+    @AetherMC(since = "1.0.0")
+    public @NotNull double getCenterX() {
+        return getCenter().x();
+    }
+
+    @AetherMC(since = "1.0.0")
+    public @NotNull double getCenterZ() {
+        return getCenter().z();
     }
 
     /**
