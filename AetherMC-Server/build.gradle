@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+dependencies {
+    implementation(rootProject)
+}
+
+shadowJar {
+    manifest {
+        attributes 'Main-Class': 'org.aethermc.Main',
+            "Multi-Release": "true"
+    }
+    destinationDirectory = file("D:\\AetherMC")
+}

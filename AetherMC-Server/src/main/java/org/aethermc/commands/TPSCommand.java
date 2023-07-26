@@ -1,4 +1,4 @@
-package server.test.commands;
+package org.aethermc.commands;
 
 import net.aethermc.ChatColor;
 import net.minestom.server.command.builder.Command;

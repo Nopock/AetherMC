@@ -1,4 +1,4 @@
-package server.test.defaultevents;
+package org.aethermc.defaultevents;
 
 import net.aethermc.Aether;
 import net.minestom.server.coordinate.Pos;

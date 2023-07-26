@@ -1,4 +1,4 @@
-package server.test;
+package org.aethermc;
 
 import net.aethermc.plugins.AetherPlugin;
 import net.aethermc.scheduler.AetherScheduler;

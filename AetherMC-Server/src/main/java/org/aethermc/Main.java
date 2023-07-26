@@ -1,4 +1,4 @@
-package server.test;
+package org.aethermc;
 
 import de.articdive.jnoise.generators.noise_parameters.simplex_variants.Simplex3DVariant;
 import de.articdive.jnoise.generators.noisegen.opensimplex.FastSimplexNoiseGenerator;
@@ -10,11 +10,11 @@ import net.minestom.server.coordinate.Point;
 import net.minestom.server.extras.MojangAuth;
 import net.minestom.server.instance.LightingChunk;
 import net.minestom.server.instance.block.Block;
-import server.test.commands.TPSCommand;
-import server.test.commands.admin.FlightCommand;
-import server.test.commands.admin.GamemodeCommand;
-import server.test.commands.admin.OpCommand;
-import server.test.defaultevents.LoginEvent;
+import org.aethermc.commands.TPSCommand;
+import org.aethermc.commands.admin.FlightCommand;
+import org.aethermc.commands.admin.GamemodeCommand;
+import org.aethermc.commands.admin.OpCommand;
+import org.aethermc.defaultevents.LoginEvent;
 
 import java.util.logging.Logger;
 
@@ -26,7 +26,7 @@ public class Main {
         long start = System.currentTimeMillis();
         LOGGER.info("Loading AetherMC...\nVersion: V1.0.0-SNAPSHOT1");
         MinecraftServer server = MinecraftServer.init();
-        // MinecraftServer.setChunkViewDistance(16);
+        MinecraftServer.setChunkViewDistance(16);
 
         Aether.getInstanceContainer().setChunkSupplier(LightingChunk::new);
 

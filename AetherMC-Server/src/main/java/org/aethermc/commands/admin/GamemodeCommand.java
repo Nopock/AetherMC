@@ -1,4 +1,4 @@
-package server.test.commands.admin;
+package org.aethermc.commands.admin;
 
 import net.minestom.server.command.builder.Command;
 import net.minestom.server.command.builder.arguments.ArgumentString;

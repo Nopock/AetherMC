@@ -1,4 +1,4 @@
-package server.test.commands.admin;
+package org.aethermc.commands.admin;
 
 import net.aethermc.Aether;
 import net.minestom.server.MinecraftServer;
