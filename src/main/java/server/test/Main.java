@@ -4,7 +4,11 @@ import de.articdive.jnoise.generators.noisegen.opensimplex.FastSimplexNoiseGener
 import de.articdive.jnoise.pipeline.JNoise;
 import net.aethermc.Aether;
 import net.aethermc.plugins.PluginLoader;
+import net.aethermc.region.Region;
+import net.aethermc.region.RegionBox;
 import net.aethermc.scheduler.AetherScheduler;
+import net.aethermc.world.AetherWorld;
+import net.aethermc.world.WorldProperties;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.command.CommandManager;
 import net.minestom.server.coordinate.Point;

@@ -1,5 +1,7 @@
 package net.minestom.server.coordinate;
 
+import net.aethermc.AetherMC;
+import net.minestom.server.instance.block.Block;
 import net.minestom.server.instance.block.BlockFace;
 import net.minestom.server.utils.MathUtils;
 import net.minestom.server.utils.position.PositionUtils;
