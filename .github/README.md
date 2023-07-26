@@ -56,6 +56,10 @@ This is the To-Do List for AetherMC before the first full release. You can build
   - [ ] Spark Profiler Integration
   - [ ] World Noise Generation (Not Currently in the main API)
   - [ ] Timespans
+- Future Plans
+  - [ ] Improved Plugin System
+  - [ ] Custom Crafting Recipes
+  - [ ] "WorldEdit" API
 
 ETA: Unknown
 # Features
