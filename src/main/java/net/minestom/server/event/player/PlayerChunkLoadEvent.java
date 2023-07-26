@@ -1,7 +1,9 @@
 package net.minestom.server.event.player;
 
+import net.aethermc.AetherMC;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.trait.PlayerInstanceEvent;
+import net.minestom.server.instance.Chunk;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -34,6 +36,11 @@ public class PlayerChunkLoadEvent implements PlayerInstanceEvent {
      */
     public int getChunkZ() {
         return chunkZ;
+    }
+
+    @AetherMC(since = "1.0.0")
+    public Chunk getChunk() {
+        return player.getInstance().getChunk(chunkX, chunkZ);
     }
 
     @Override
