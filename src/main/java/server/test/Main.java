@@ -26,7 +26,7 @@ public class Main {
         long start = System.currentTimeMillis();
         LOGGER.info("Loading AetherMC...\nVersion: V1.0.0-SNAPSHOT1");
         MinecraftServer server = MinecraftServer.init();
-        MinecraftServer.setChunkViewDistance(16);
+        // MinecraftServer.setChunkViewDistance(16);
 
         Aether.getInstanceContainer().setChunkSupplier(LightingChunk::new);
 

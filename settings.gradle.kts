@@ -7,3 +7,4 @@ include("code-generators")
 
 include("demo")
 include("server-test")
+include("AetherMC-Placement")
