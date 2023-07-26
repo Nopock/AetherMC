@@ -13,7 +13,7 @@ AetherMC is currently in development, you may be able to get a build from me if 
 # To-Do List
 This is the To-Do List for AetherMC before the first full release. You can build the project whenever and test it out for yourself!
 
-Completed: 2/38
+Completed: 8/38
 
 - Regions
   - [ ] Saving Regions
@@ -34,12 +34,12 @@ Completed: 2/38
   - [ ] World Unloading
   - [ ] World Loading
 - Lighting Engine
-  - [ ] Rewrite the Whole LightingEngine
-  - [ ] Fix Dark Chunks
-  - [ ] Parallel Light Updates
-  - [ ] Batch Light Updates
-  - [ ] Fix Lighting Updates (Literally takes like 10 seconds to compute 50 chunks of light)
-  - [ ] Add Light Source Blocks (Torch, Sea Lantern, ect)
+  - [x] Rewrite the Whole LightingEngine
+  - [x] Fix Dark Chunks
+  - [x] Parallel Light Updates
+  - [x] Batch Light Updates
+  - [x] Fix Lighting Updates (Literally takes like 10 seconds to compute 50 chunks of light)
+  - [x] Add Light Source Blocks (Torch, Sea Lantern, ect)
 - Blocks
   - [ ] BlockStates
   - [ ] New Methods (#getWorld(), #getChunk(), #getChunkBorder(), #isInsideRegion(Region region), ect)
