@@ -13,12 +13,12 @@ AetherMC is currently in development, you may be able to get a build from me if 
 # To-Do List
 This is the To-Do List for AetherMC before the first full release. You can build the project whenever and test it out for yourself!
 
-Completed: 1/38
+Completed: 2/38
 
 - Regions
   - [ ] Saving Regions
   - [ ] Loading Regions
-  - [ ] Region BoundingBoxes
+  - [x] Region BoundingBoxes
   - [ ] Region Events
 - Chunks
   - [ ] Chunk Saving
