@@ -1,15 +1,46 @@
+<p align="center"> 
+  <img src="https://i.imgur.com/jthR3lX.png" width="640" height="187">
+</p>
+<p align="center">
+  <img src="https://img.shields.io/github/license/Outspending/AetherMC">
+  <img src="https://img.shields.io/github/languages/code-size/Outspending/AetherMC">
+  <img src="https://img.shields.io/github/repo-size/Outspending/AetherMC">
+  <img src="https://img.shields.io/github/v/release/Outspending/AetherMC">
+  <img src="https://img.shields.io/github/languages/top/Outspending/AetherMC">
+  <img src="https://img.shields.io/github/last-commit/Outspending/AetherMC">
+</p>
+
 # What is AetherMC
 AetherMC is an Asynchronous, Lightweight Minecraft Server. AetherMC is made for java developers and built for developers. This is a bare bones version of Mojang's Minecraft Server. It has everything you need to make a minecraft server. AetherMC has all the essentials for creating a minecraft server quickly without any issues.
 
 In AetherMC there is no "Main Thread" anymore. If you don't know how to properly use `Threads` or making your plugins `Thread-Safe` this isn't the Minecraft Server for you. But the main API should handle things without any major issues if you don't fully know `Thread-Safety` here is a little guide on Thread-Safety ([HERE](https://www.baeldung.com/java-thread-safety))
 
 AetherMC is currently in development, you may be able to get a build from me if you ask nicely by contacting my through discord [My Profile](https://discord.com/users/982807217952677888)
+
 > **AetherMC is a fork of Minestom**
 >
 > Minestom is a lightweight minecraft server.
 > It doesn't contain any code from mojang
 > 
 > You can find more details [HERE](https://minestom.net/)
+> 
+## Features:
+- Multi Threading
+  - Setting Blocks, Updating Light, Chunk Loading, Chunk Unloading is all Asynchronous
+- Custom Plugin Manager
+  - AetherMC has a very complex plugin system and is fully async. AetherMC does not support **Bukkit, Spigot,  or Paper**
+- WorldCreator
+  - AetherMC provides a very complex world management, you can **Create, Delete, Unload, and Load** worlds very fast
+- NPC Support
+  - AetherMC has built-in NPC support, no need for another plugin to do this for you.
+- 1.20.1 Support
+  - AetherMC has been created for 1.20.1 and any other versions below 1.20.1 isn't supported. You shouldn't be worried about performance though
+- Modify and Listen for packets
+  - AetherMC provides a very simple Packet API for your disposal.
+- Commands and Events are Annotation based
+  - Very simple command system, you no longer need the hastle of brigadier and `plugin.yml` anymore! Everything is handled with 1 line of code
+- And More Coming Soon
+  - I'm very excited to work on this project and keep it updated please check out the CHANGELOGS.md for the most recent changelogs
 # To-Do List
 This is the To-Do List for AetherMC before the first full release. You can build the project whenever and test it out for yourself!
 
@@ -65,24 +96,6 @@ Completed: 8/38
   - [ ] "WorldEdit" API
 
 ETA: Unknown
-# Features
-AetherMC provides many API's at your disposal to improve and create a lagless minecraft server!
-- Multi Threading
-  - Setting Blocks, Updating Light, Chunk Loading, Chunk Unloading is all Asynchronous
-- Custom Plugin Manager
-  - AetherMC has a very complex plugin system and is fully async. AetherMC does not support **Bukkit, Spigot,  or Paper**
-- WorldCreator
-  - AetherMC provides a very complex world management, you can **Create, Delete, Unload, and Load** worlds very fast
-- NPC Support
-  - AetherMC has built-in NPC support, no need for another plugin to do this for you.
-- 1.20.1 Support
-  - AetherMC has been created for 1.20.1 and any other versions below 1.20.1 isn't supported. You shouldn't be worried about performance though
-- Modify and Listen for packets
-  - AetherMC provides a very simple Packet API for your disposal.
-- Commands and Events are Annotation based
-  - Very simple command system, you no longer need the hastle of brigadier and `plugin.yml` anymore! Everything is handled with 1 line of code
-- And More Coming Soon
-  - I'm very excited to work on this project and keep it updated please check out the CHANGELOGS.md for the most recent changelogs
 # API
 AetherMC contains lots of Utility classes and methods to help improve your server without 500 lines of code.
 The API provides many utility classes for **Math, Location, Chunk, LightingEngine, and much more** to help you.
