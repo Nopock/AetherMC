@@ -12,6 +12,9 @@ AetherMC is currently in development, you may be able to get a build from me if 
 > You can find more details [HERE](https://minestom.net/)
 # To-Do List
 This is the To-Do List for AetherMC before the first full release. You can build the project whenever and test it out for yourself!
+
+Completed: 0/38
+
 - Regions
   - [ ] Saving Regions
   - [ ] Loading Regions
