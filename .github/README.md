@@ -86,6 +86,7 @@ Completed: 8/38
   - [ ] Locations (Replaces `Pos` and `Point` in Minestom API)
   - [ ] ParticleUtils? (Drawing Spheres, Triangles, and other shapes)
   - [ ] Block Drops (😭)
+  - [ ] Leaderboards API
 - Suggestions
   - [ ] Spark Profiler Integration
   - [ ] World Noise Generation (Not Currently in the main API)
