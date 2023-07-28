@@ -4,6 +4,10 @@ import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMaps;
+import net.aethermc.AetherMC;
+import net.aethermc.world.AetherWorld;
+import net.minestom.server.coordinate.Pos;
+import net.minestom.server.item.Material;
 import net.minestom.server.registry.Registry;
 import net.minestom.server.tag.Tag;
 import net.minestom.server.utils.ArrayUtils;
@@ -158,6 +162,22 @@ record BlockImpl(@NotNull Registry.BlockEntry registry,
     @Override
     public @NotNull Block withHandler(@Nullable BlockHandler handler) {
         return new BlockImpl(registry, propertiesArray, nbt, handler);
+    }
+
+    @Override
+    @AetherMC(since = "1.0.0")
+    public @NotNull Pos getPosition() {
+        return null;
+    }
+
+    @Override
+    public @NotNull Material getMaterial() {
+        return null;
+    }
+
+    @Override
+    public @NotNull AetherWorld getWorld() {
+        return null;
     }
 
     @Override

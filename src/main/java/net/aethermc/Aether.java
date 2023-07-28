@@ -1,6 +1,8 @@
 package net.aethermc;
 
+import net.kyori.adventure.text.Component;
 import net.minestom.server.MinecraftServer;
+import net.minestom.server.adventure.audience.Audiences;
 import net.minestom.server.command.CommandManager;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.GlobalEventHandler;
@@ -31,6 +33,11 @@ public final class Aether {
         return getConnectionManager().getPlayer(uuid);
     }
 
+    public static void broadcastMessage(String message) {
+        Audiences.all().sendMessage(Component.text(ChatColor.color(message)));
+        getLogger().log(AetherLogger.Level.INFO, ChatColor.decolor(message));
+    }
+
     public static PluginManager getPluginManager() {
         return new PluginManager();
     }
@@ -49,5 +56,9 @@ public final class Aether {
 
     public static ConnectionManager getConnectionManager() {
         return connectionManager;
+    }
+
+    public static AetherLogger getLogger() {
+        return new AetherLogger();
     }
 }

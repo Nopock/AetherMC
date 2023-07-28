@@ -1,8 +1,12 @@
 package net.minestom.server.instance.block;
 
+import net.aethermc.AetherMC;
+import net.aethermc.world.AetherWorld;
 import net.minestom.server.coordinate.Point;
+import net.minestom.server.coordinate.Pos;
 import net.minestom.server.instance.Instance;
 import net.minestom.server.instance.batch.Batch;
+import net.minestom.server.item.Material;
 import net.minestom.server.registry.ProtocolObject;
 import net.minestom.server.registry.Registry;
 import net.minestom.server.tag.Tag;
@@ -88,6 +92,16 @@ public sealed interface Block extends ProtocolObject, TagReadable, Blocks permit
     @Contract(pure = true)
     @Nullable NBTCompound nbt();
 
+    // TODO: Replace this with Location at one point
+    @AetherMC(since = "1.0.0")
+    @NotNull Pos getPosition();
+
+    @AetherMC(since = "1.0.0")
+    @NotNull Material getMaterial();
+
+    @AetherMC(since = "1.0.0")
+    @NotNull AetherWorld getWorld();
+
     @Contract(pure = true)
     default boolean hasNbt() {
         return nbt() != null;
@@ -119,6 +133,11 @@ public sealed interface Block extends ProtocolObject, TagReadable, Blocks permit
     @Contract(pure = true)
     default String getProperty(@NotNull String property) {
         return properties().get(property);
+    }
+
+    @AetherMC(since = "1.0.0")
+    default Map<String, String> getProperties() {
+        return properties();
     }
 
     @Contract(pure = true)

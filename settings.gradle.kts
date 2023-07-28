@@ -7,5 +7,5 @@ include("code-generators")
 
 include("demo")
 include("server-test")
-include("AetherMC-Placement")
-include("AetherMC-Server")
+include("server-jar")
+include("blockstates")

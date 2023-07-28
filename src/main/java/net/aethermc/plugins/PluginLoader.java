@@ -1,5 +1,7 @@
 package net.aethermc.plugins;
 
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.Caffeine;
 import it.unimi.dsi.fastutil.Pair;
 import net.aethermc.Aether;
 import net.aethermc.AetherMC;
@@ -15,6 +17,7 @@ import java.util.Scanner;
 import java.util.concurrent.CompletableFuture;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @AetherMC(since = "1.0.0")
@@ -23,6 +26,9 @@ import java.util.logging.Logger;
 public final class PluginLoader {
 
     private static final Logger LOGGER = Logger.getLogger("AetherMC");
+
+    public static final Cache<String, RegisteredPlugin> registeredPlugins = Caffeine.newBuilder()
+            .weakKeys().weakValues().build();
 
     private static @NotNull Pair<String, String> getData(@NotNull String str) {
         String[] strings = str.split(": ");
@@ -82,6 +88,7 @@ public final class PluginLoader {
 
                 Aether.getPluginManager().registerPlugin(registeredPlugin);
                 LOGGER.info("Registered plugin " + registeredPlugin.getName() + " in " + (System.currentTimeMillis() - start) + "ms");
+                registeredPlugins.put(registeredPlugin.getName(), registeredPlugin);
             }
         } catch (IOException e) {
             e.printStackTrace();
