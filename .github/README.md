@@ -1,5 +1,5 @@
 <p align="center"> 
-  <img src="https://i.imgur.com/jthR3lX.png" width="640" height="187">
+  <img src="https://i.imgur.com/jthR3lX.png">
 </p>
 <p align="center">
   <img src="https://img.shields.io/github/license/Outspending/AetherMC">
