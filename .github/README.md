@@ -25,22 +25,59 @@ AetherMC is currently in development, you may be able to get a build from me if 
 > You can find more details [HERE](https://minestom.net/)
 > 
 ## Features:
-- Multi Threading
-  - Setting Blocks, Updating Light, Chunk Loading, Chunk Unloading is all Asynchronous
-- Custom Plugin Manager
-  - AetherMC has a very complex plugin system and is fully async. AetherMC does not support **Bukkit, Spigot,  or Paper**
-- WorldCreator
-  - AetherMC provides a very complex world management, you can **Create, Delete, Unload, and Load** worlds very fast
-- NPC Support
-  - AetherMC has built-in NPC support, no need for another plugin to do this for you.
-- 1.20.1 Support
-  - AetherMC has been created for 1.20.1 and any other versions below 1.20.1 isn't supported. You shouldn't be worried about performance though
-- Modify and Listen for packets
-  - AetherMC provides a very simple Packet API for your disposal.
-- Commands and Events are Annotation based
-  - Very simple command system, you no longer need the hastle of brigadier and `plugin.yml` anymore! Everything is handled with 1 line of code
-- And More Coming Soon
-  - I'm very excited to work on this project and keep it updated please check out the CHANGELOGS.md for the most recent changelogs
+AetherMC provides many useful API's and Libraries at your disposal. This will maximize the efficiency of creating your dream server!
+
+### Multi-Threading
+AetherMC is multi-threading, you can do anything anywhere using our API. In `Spigot, and Paper` it isn't possible to have this much freedom with multi-threading. Now you can! AetherMC is utilizing this to its potental so your CPU doesn't only use 1 thread. Here's everything AetherMC is using asynchronously
+
+- Setting Blocks
+- Updating Blocks
+- Updating Light
+- World Loading
+- Plugin Loading
+
+ If you aren't fully sure about multi-threading you can check it out [HERE]().
+### Plugin API
+Our API has a wide variaty of brand new things that minestom doesn't offer such as:
+
+- New Methods
+- New Util Classes
+- Leaderboard Implementation
+- NPC Implementation
+- Blockstate Manipulation
+- Packet Manipulation
+- World Creation
+
+All of these have a purpose which is why they aren't seperate using plugins. 
+### World Creator
+The world creator in AetherMC is using `AnvilWorld` and can easily modify your world using `Dimensions` very simple with our world creator you can create:
+
+- Custom World Biomes (Without the need of restarting your server)
+- Custom Dimensions
+
+These can be used for creating a very epic landscape for your server. You can do basically anything with this API and hopefully you'll use it to its full potential!
+#### Built-in NPC Support
+- AetherMC has built-in NPC support, no need for another plugin to do this for you.
+### Settings
+In AetherMC you have over 100+ options to optimize your server and use it to its potental! Some of these settings include:
+
+- Render Distance
+- Loading Worlds Async
+- Loading Worlds (This can be disabled for optimization purposes when loading your server)
+
+These are just the surface of what you can do with AetherMC! 
+### Packets
+Our Packet API is very complex, you can easily `Recieve, Listen, and Modify` packets. This does come at a performance cost though. And can easily create some dangerous environments. With packet overloading you can crash minecraft clients easily. So be careful! 
+### Commands
+The command system in AetherMC is completely from `Minestom` and i do expect to change it in a future update. This doesn't require you to edit the `plugin.yml` anymore. This does save some time and is very easy to understand.
+### Plans
+I have many plans for AetherMC but first i need to finish the core features then i will do the following:
+
+- A "WorldEdit" type API for creating your worlds quickly
+- Spark Profiler Integration
+- and more
+
+I have lots of plans for this and im excited for this to be used by people to create their servers. Check out the to-do list below for the current progress on this project
 # To-Do List
 This is the To-Do List for AetherMC before the first full release. You can build the project whenever and test it out for yourself!
 
@@ -112,19 +149,27 @@ Utility Classes:
   - This contains very easy to use methods to get `Locations` like never before
 - VectorUtils
   - This contains methods for rotating a vector, and changing many of its properties like the Minestoms can't
-## Regions
+### Regions
 Regions are like BoundingBoxes from `Spigot` with more featues like `Events`. These can also be saved so they can be loaded once the server starts again
-## Chunks
+### Chunks
 Chunks now have "borders" borders are the outline of a chunk `16x16`. They act like regions, you can get the border of a list of chunks and it will return a outline border of all the chunks in the list
-## Commands
+### Commands
 AetherMC has a fully recoded version of Minestoms command API which is now Annotation based. Creating commands no longer needs to be inside the `plugin.yml` and will automaticlly be registered in the background
-## Events
+### Events
 AetherMC has also recoded the events system. It is more friendly to the eye and easier to comprehend. Each event can be async or not. Here's an example: `AsyncBlockBreakEvent` or `BlockBreakEvent`
-## Blocks
+### Blocks
 The block system has also been fully recoded because it didn't meet the needs of this API, blocks consist of many new methods that Minestom doesn't offer
-## Worlds
+### Worlds
 The world system in AetherMC is very user friendly, it has many builders so you can let your imagination go wild with the world system
-## Biomes 
+### Biomes 
 Biomes haven't changed much from Minestom you can easily create a custom biome which has been changed a bit to remove the frustation of all the builders you have to deal with
+# Credits
+Thanks to all of these `Libraries` and `API's`:
+
+- [YamlBeans](https://github.com/EsotericSoftware/yamlbeans): Utilizing YML files
+- [Gson](https://github.com/google/gson): For Storage Files in JSON Format
+- [The Minecraft Wiki](https://minecraft.fandom.com/wiki/Minecraft_Wiki): For all the very useful information about Loot Tables, Enchantements, ect
+- [The Minecraft Coalition](https://wiki.vg/Main_Page): For file formats
+
 # Thanks
 If you are considering this as your pick for your Minecraft Server thank you, hopefully this project meets the needs of your expectations, i am fully willing you listen to your suggestions and change whatever accordingly :heart:
