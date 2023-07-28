@@ -15,6 +15,8 @@ AetherMC is an Asynchronous, Lightweight Minecraft Server. AetherMC is made for 
 
 In AetherMC there is no "Main Thread" anymore. If you don't know how to properly use `Threads` or making your plugins `Thread-Safe` this isn't the Minecraft Server for you. But the main API should handle things without any major issues if you don't fully know `Thread-Safety` here is a little guide on Thread-Safety ([HERE](https://www.baeldung.com/java-thread-safety))
 
+Check out the [Wiki](https://github.com/Outspending/AetherMC/wiki) for more information about `Thread-Safety` and our `API`. This will help you thought each element of the API and is updated accordingly whenever we change anything. The wiki is made for helping people and to minimize the questions in our discord and discussions. Thanks, and if you want something adding to the wiki that isn't there please DM me :smile:
+
 AetherMC is currently in development, you may be able to get a build from me if you ask nicely by contacting my through discord [My Profile](https://discord.com/users/982807217952677888)
 
 > **AetherMC is a fork of Minestom**
