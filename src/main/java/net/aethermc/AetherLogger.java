@@ -11,6 +11,13 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Scanner;
 
+/**
+ * {@snippet :
+ *     public static void main(String[] args) {
+ *         Aether.getLogger().log(AetherLogger.Level.INFO, "Hello World!");
+ *     }
+ * }
+ */
 @ApiStatus.Experimental
 public class AetherLogger {
 
@@ -22,7 +29,7 @@ public class AetherLogger {
     }
 
     public void log(Level level, String log) {
-        System.out.println(String.format(LOGGER_FORMAT, level.getColor(), getFormattedTime(), level.toString(), log));
+        System.out.println(String.format(LOGGER_FORMAT, level.getColor(), getFormattedTime(), level, log));
     }
 
     /**
@@ -42,11 +49,6 @@ public class AetherLogger {
 
         public String getColor() {
             return color;
-        }
-
-        @Override
-        public String toString() {
-            return name();
         }
     }
 

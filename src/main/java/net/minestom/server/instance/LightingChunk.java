@@ -32,7 +32,7 @@ import static net.minestom.server.instance.light.LightCompute.emptyContent;
 public class LightingChunk extends DynamicChunk {
 
     private static final int LIGHTING_CHUNKS_PER_SEND = Integer.getInteger("minestom.lighting.chunks-per-send", 10);
-    private static final int LIGHTING_CHUNKS_SEND_DELAY = Integer.getInteger("minestom.lighting.chunks-send-delay", 25);
+    private static final int LIGHTING_CHUNKS_SEND_DELAY = Integer.getInteger("minestom.lighting.chunks-send-delay", 100);
 
     private static final ExecutorService pool = Executors.newWorkStealingPool();
 
@@ -86,12 +86,22 @@ public class LightingChunk extends DynamicChunk {
     }
 
     private void invalidateSection(int coordinate) {
-        var section = getSection(coordinate);
-        section.blockLight().invalidate();
-        section.skyLight().invalidate();
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                Chunk neighborChunk = instance.getChunk(chunkX + i, chunkZ + j);
+                if (neighborChunk == null) continue;
 
-        lightCache.invalidate();
-        chunkCache.invalidate();
+                if (neighborChunk instanceof LightingChunk light) {
+                    light.lightCache.invalidate();
+                    light.chunkCache.invalidate();
+                }
+                for (int k = -1; k <= 1; k++) {
+                    if (k + coordinate < neighborChunk.getMinSection() || k + coordinate >= neighborChunk.getMaxSection()) continue;
+                    neighborChunk.getSection(k + coordinate).blockLight().invalidate();
+                    neighborChunk.getSection(k + coordinate).skyLight().invalidate();
+                }
+            }
+        }
     }
 
     @Override
@@ -281,7 +291,7 @@ public class LightingChunk extends DynamicChunk {
                     }
                 }
             }
-        }, TaskSchedule.immediate(), TaskSchedule.tick(3), ExecutionType.ASYNC);
+        }, TaskSchedule.immediate(), TaskSchedule.tick(20), ExecutionType.ASYNC);
         lightLock.unlock();
     }
 
@@ -370,7 +380,7 @@ public class LightingChunk extends DynamicChunk {
 
     private static Set<Point> collectRequiredNearby(Instance instance, Point point) {
         final Set<Point> found = new HashSet<>();
-        final ArrayDeque<Point> toCheck = new ArrayDeque<>();
+        final Deque<Point> toCheck = new ArrayDeque<>();
 
         toCheck.add(point);
         found.add(point);
@@ -378,12 +388,13 @@ public class LightingChunk extends DynamicChunk {
         while (toCheck.size() > 0) {
             final Point current = toCheck.poll();
             final Set<Point> nearby = getNearbyRequired(instance, current);
-            nearby.forEach(p -> {
+
+            for (Point p : nearby) {
                 if (!found.contains(p)) {
                     found.add(p);
                     toCheck.add(p);
                 }
-            });
+            }
         }
 
         return found;
