@@ -3,9 +3,12 @@ package org.aethermc;
 import net.aethermc.Aether;
 import net.aethermc.AetherLogger;
 import net.minestom.server.MinecraftServer;
+import net.minestom.server.event.EventDispatcher;
+import net.minestom.server.event.EventNode;
 import net.minestom.server.extras.MojangAuth;
 import net.minestom.server.instance.LightingChunk;
-import org.aethermc.defaultevents.LoginEvent;
+import org.aethermc.events.LoginEvent;
+import org.aethermc.events.custom.EventListener;
 
 public class Main {
 
@@ -24,6 +27,9 @@ public class Main {
         logger.log(AetherLogger.Level.INFO, "Loading MojangAuth...");
         MojangAuth.init();
         new LoginEvent();
+
+        logger.log(AetherLogger.Level.INFO, "Loading Event Handlers...");
+        new EventListener();
 
         logger.log(AetherLogger.Level.INFO, "Loading Commands...");
         new CommandHandler().registerCommands(Aether.getCommandManager());

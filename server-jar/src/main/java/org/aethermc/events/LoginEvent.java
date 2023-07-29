@@ -1,11 +1,7 @@
-package org.aethermc.defaultevents;
+package org.aethermc.events;
 
 import net.aethermc.Aether;
 import net.aethermc.AetherLogger;
-import net.aethermc.ChatColor;
-import net.kyori.adventure.audience.Audience;
-import net.kyori.adventure.text.Component;
-import net.minestom.server.adventure.audience.Audiences;
 import net.minestom.server.coordinate.Pos;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.player.PlayerLoginEvent;
