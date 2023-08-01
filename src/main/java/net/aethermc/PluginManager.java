@@ -13,6 +13,7 @@ import java.util.concurrent.CompletableFuture;
 public class PluginManager {
 
     public final Cache<String, RegisteredPlugin> cachedPlugins = Caffeine.newBuilder()
+            .weakValues()
             .build();
 
     public void registerPlugin(RegisteredPlugin plugin) {

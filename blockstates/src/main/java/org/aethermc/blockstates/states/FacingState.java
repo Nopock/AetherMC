@@ -1,22 +1,28 @@
 package org.aethermc.blockstates.states;
 
+import net.minestom.server.coordinate.Vec;
 import net.minestom.server.instance.block.Block;
 import org.aethermc.blockstates.BlockState;
 import org.aethermc.blockstates.OppositeState;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public enum FacingState implements BlockState<FacingState>, OppositeState<FacingState> {
-    NORTH("north"),
-    EAST("east"),
-    SOUTH("south"),
-    WEST("west");
+    NORTH(0, 0, 0, "north"),
+    EAST(1, 0, 0, "east"),
+    SOUTH(1, 0, 1, "south"),
+    WEST(0, 0,  1, "west");
 
+    private final int x, y, z;
     private final String propertyValue;
 
-    FacingState(String propertyValue) {
+    FacingState(int x, int y, int z, String propertyValue) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
         this.propertyValue = propertyValue;
     }
 
@@ -44,5 +50,13 @@ public enum FacingState implements BlockState<FacingState>, OppositeState<Facing
             case SOUTH -> NORTH;
             case WEST -> EAST;
         };
+    }
+
+    public static @Nullable FacingState get(@NotNull Vec vec) {
+        for (FacingState state : values()) {
+            if (state.x == Math.ceil(vec.x()) && state.y == Math.ceil(vec.y()) && state.z == Math.ceil(vec.z()))
+                return state;
+        }
+        return null;
     }
 }

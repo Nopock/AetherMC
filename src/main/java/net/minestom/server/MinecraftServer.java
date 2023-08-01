@@ -65,7 +65,7 @@ public final class MinecraftServer {
     private static int entityViewDistance = Integer.getInteger("minestom.entity-view-distance", 5);
     private static int compressionThreshold = 256;
     private static boolean terminalEnabled = System.getProperty("minestom.terminal.disabled") == null;
-    private static String brandName = "Minestom";
+    private static String brandName = "AetherMC";
     private static Difficulty difficulty = Difficulty.NORMAL;
 
     public static MinecraftServer init() {

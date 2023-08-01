@@ -27,6 +27,10 @@ public class RegionBox {
         registeredBoxes.add(this);
     }
 
+    public RegionBox(Pos minPos, Pos maxPos) {
+        this(minPos.blockX(), minPos.blockY(), minPos.blockZ(), maxPos.blockX(), maxPos.blockY(), maxPos.blockZ());
+    }
+
     public boolean isWithinRegion(double x, double y, double z) {
         return x >= minX && x <= maxX && y >= minY && y <= maxY && z >= minZ && z <= maxZ;
     }

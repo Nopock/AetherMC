@@ -1,5 +1,6 @@
 package net.minestom.server.particle;
 
+import net.aethermc.particles.ParticleType;
 import net.minestom.server.registry.ProtocolObject;
 import net.minestom.server.utils.NamespaceID;
 import org.jetbrains.annotations.NotNull;

@@ -18,6 +18,7 @@ import java.util.Scanner;
  *     }
  * }
  */
+@AetherMC(since = "1.0.0")
 @ApiStatus.Experimental
 public class AetherLogger {
 

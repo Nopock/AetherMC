@@ -5,6 +5,7 @@ plugins {
 
 dependencies {
     implementation(rootProject)
+    implementation project(":blockstates")
 }
 
 shadowJar {

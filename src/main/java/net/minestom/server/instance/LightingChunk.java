@@ -385,7 +385,7 @@ public class LightingChunk extends DynamicChunk {
         toCheck.add(point);
         found.add(point);
 
-        while (toCheck.size() > 0) {
+        while (!toCheck.isEmpty()) {
             final Point current = toCheck.poll();
             final Set<Point> nearby = getNearbyRequired(instance, current);
 
