@@ -35,8 +35,7 @@ public class ParticleTriangle implements ParticleShape {
             for (int x = -radius; x <= radius; x++) {
                 for (int z = -radius; z <= radius; z++) {
                     if (Math.abs(x) + Math.abs(z) <= radius) {
-                        double something = radius - Math.max(Math.abs(x), Math.abs(z));
-                        double y = pos.y() + something;
+                        double y = pos.y() + (radius - Math.max(Math.abs(x), Math.abs(z)));
 
                         ParticlePacket packet = type.construct(new Pos(x, y, z));
                         Objects.requireNonNull(packet, "Packet cannot be null");

@@ -3,22 +3,18 @@ package org.aethermc;
 import net.aethermc.Aether;
 import net.aethermc.AetherLogger;
 import net.aethermc.ChatColor;
+import net.aethermc.events.PlayerDiggingEvent;
 import net.aethermc.particles.ParticleDisplay;
-import net.aethermc.particles.shapes.ParticleImage;
-import net.aethermc.particles.shapes.ParticleLine;
-import net.aethermc.particles.shapes.ParticleTriangle;
-import net.aethermc.particles.types.DustParticle;
 import net.aethermc.utils.ParticleUtils;
 import net.aethermc.particles.shapes.ParticleCircle;
-import net.aethermc.particles.types.NormalParticle;
 import net.aethermc.particles.types.ParticleTransition;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.color.Color;
 import net.minestom.server.coordinate.Pos;
+import net.minestom.server.entity.Player;
 import net.minestom.server.event.player.PlayerBlockBreakEvent;
 import net.minestom.server.extras.MojangAuth;
 import net.minestom.server.instance.LightingChunk;
-import net.minestom.server.particle.Particle;
 import org.aethermc.events.LoginEvent;
 import org.aethermc.events.custom.EventListener;
 
@@ -51,8 +47,6 @@ public class Main {
         new WorldGeneration();
         server.start("0.0.0.0", 25565);
 
-        Aether.getLogger().log(AetherLogger.Level.INFO, ChatColor.of("#00ff00"));
-
         Aether.getPluginManager().registerAllPlugins().thenAccept(plugins -> {
             logger.log(AetherLogger.Level.INFO, String.format("AetherMC has been loaded with %s plugins in %.2fs", plugins, (System.currentTimeMillis() - start) / 1000.0));
         });
@@ -74,6 +68,15 @@ public class Main {
 //                Aether.broadcastMessage(String.valueOf(i));
 //                ((ParticleCircle) display.getShape(0)).setSize(i);
 //            }
+        });
+
+        Aether.getGlobalEventHandler().addListener(PlayerDiggingEvent.class, event -> {
+            final Player player = event.getPlayer();
+            switch (event.getStatus()) {
+                case STARTED_DIGGING -> player.sendMessage("Started digging");
+                case CANCELLED_DIGGING -> player.sendMessage("Cancelled digging");
+                case FINISHED_DIGGING -> player.sendMessage("Finished digging");
+            }
         });
     }
 }

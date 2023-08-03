@@ -8,6 +8,7 @@ import net.minestom.server.command.CommandManager;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.GlobalEventHandler;
 import net.minestom.server.instance.InstanceContainer;
+import net.minestom.server.item.ItemStack;
 import net.minestom.server.listener.manager.PacketListenerManager;
 import net.minestom.server.monitoring.BenchmarkManager;
 import net.minestom.server.network.ConnectionManager;
