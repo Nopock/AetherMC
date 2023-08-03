@@ -83,7 +83,7 @@ I have lots of plans for this and im excited for this to be used by people to cr
 # To-Do List
 This is the To-Do List for AetherMC before the first full release. You can build the project whenever and test it out for yourself!
 
-Completed: 8/38
+Completed: 9/36
 
 - Regions
     - [ ] Saving Regions
@@ -114,16 +114,13 @@ Completed: 8/38
     - [ ] BlockStates
     - [ ] New Methods (#getWorld(), #getChunk(), #getChunkBorder(), #isInsideRegion(Region region), ect)
     - [ ] Floating Torches, Signs, ect
-- Events
-    - [ ] Events rewrite
-    - [ ] `Async` and `Sync` events (`AsyncBlockBreakEvent` and `BlockBreakEvent`)
 - Misc
     - [ ] Fix Ram Issue (Using up around 5GB without any plugins, this is due to the current LightingEngine though)
     - [ ] Add Console Commands
     - [ ] Opped Players
     - [ ] Admin Commands (/ban, /tempban, /mute, /tempmute, ect)
     - [ ] Locations (Replaces `Pos` and `Point` in Minestom API)
-    - [ ] ParticleUtils? (Drawing Spheres, Triangles, and other shapes)
+    - [x] ParticleUtils? (Drawing Spheres, Triangles, and other shapes)
     - [ ] Block Drops (😭)
     - [ ] Leaderboards API
 - Suggestions
