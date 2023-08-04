@@ -112,7 +112,7 @@ I have lots of plans for this project, and I'm excited for it to be used by peop
 
 This is the To-Do List for AetherMC before the first full release. You can build the project whenever and test it out for yourself!
 
-Completed: 9/36
+Completed: 11/36 (**30.5%**)
 
 - Regions
     - [ ] Saving Regions
@@ -140,9 +140,9 @@ Completed: 9/36
     - [x] Fix Lighting Updates (Takes like 10 seconds to compute 50 chunks of light)
     - [x] Add Light Source Blocks (Torch, Sea Lantern, etc.)
 - Blocks
-    - [ ] BlockStates
+    - [x] BlockStates
     - [ ] New Methods (#getWorld(), #getChunk(), #getChunkBorder(), #isInsideRegion(Region region), etc.)
-    - [ ] Floating Torches, Signs, etc.
+    - [x] Floating Torches, Signs, etc.
 - Misc
     - [ ] Fix Ram Issue (Using up around 5GB without any plugins; this is due to the current LightingEngine though)
     - [ ] Add Console Commands
