@@ -27,6 +27,16 @@ AetherMC is currently in development, and if you're interested, you can get a bu
 >
 > You can find more details [HERE](https://minestom.net/)
 
+| Version   | Support        |
+| :---      |     :----:     |
+| 1.20.x    | ✅             |
+| 1.20      | ✅             |
+| 1.19.x    | ❌             |
+| 1.19      | ❌             |
+| 1.18.x    | ❌             |
+| 1.18      | ❌             |
+| < 1.17    | ❌             |
+
 ## Features:
 
 AetherMC provides many useful API's and Libraries at your disposal, maximizing the efficiency of creating your dream server!
