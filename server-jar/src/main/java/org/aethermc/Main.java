@@ -42,10 +42,7 @@ public class Main {
         JarLoader.checkFiles();
 
         logger.info("Loading AetherMC-settings.yml");
-        logger.warning("Found enabled experimental features. Please make sure you know what you're doing. These features can cause bugs");
-        logger.info("Loaded Experimental Features:");
-        logger.info("- async-world-loading");
-        logger.info("- async-plugin-loading");
+        // load settings
         logger.success("Configured Settings (0.00s)");
 
         logger.info(String.format("Starting Minecraft Server on version %s", MinecraftServer.VERSION_NAME));
@@ -69,7 +66,5 @@ public class Main {
 
         new WorldGeneration();
         server.start("0.0.0.0", 25565);
-
-        NumberUtils.
     }
 }

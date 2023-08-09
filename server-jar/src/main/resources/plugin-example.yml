@@ -1,9 +1,12 @@
-aether-settings:
-  async-loading: true # default false
-  async-unloading: true # default false
+aether-settings: # optional
+  async-reloading: true # default false
+  override-settings: true # default false
 
-name: Glass
-description: A plugin that adds glass to the game. (totally)
-version: 1.0.0
-main: com.example.glass.GlassPlugin
-author: Example
+name: Glass # name of the plugin
+description: A plugin that adds glass to the game. (totally) # description of the plugin
+version: 1.0.0 # version of the plugin
+main: com.example.glass.GlassPlugin # main class of the plugin
+author: Example # author of the plugin
+depend: [] # plugins that this plugin depends on
+soft-depend: [] # plugins that this plugin soft depends on
+

@@ -15,8 +15,9 @@ public abstract class AetherPlugin extends Plugin {
     protected String version;
     protected String author;
     protected String description;
-    protected List<String> depend;
-    protected List<String> softDepend;
+    protected List<String> dependencies;
+    protected List<String> softDependencies;
+    protected double weight = 0D;
     protected boolean loadAsync = false;
     protected boolean unloadAsync = false;
 
@@ -26,21 +27,19 @@ public abstract class AetherPlugin extends Plugin {
     public PluginClassLoader classLoader;
 
     public AetherPlugin() {
-        super(null, null, null);
     }
 
     public AetherPlugin(String name, String version, String author, String description) {
         this(name, version, author, description, new ArrayList<>(), new ArrayList<>());
     }
 
-    public AetherPlugin(String name, String version, String author, String description, List<String> depend, List<String> softDepend) {
-        super(null, null, null);
+    public AetherPlugin(String name, String version, String author, String description, List<String> dependencies, List<String> softDependencies) {
         this.name = name;
         this.version = version;
         this.author = author;
         this.description = description;
-        this.depend = depend;
-        this.softDepend = softDepend;
+        this.dependencies = dependencies;
+        this.softDependencies = softDependencies;
     }
 
     public String getName() {
@@ -63,12 +62,16 @@ public abstract class AetherPlugin extends Plugin {
         return logger;
     }
 
-    public List<String> getDepends() {
-        return depend;
+    public List<String> getDependencies() {
+        return dependencies;
     }
 
-    public List<String> getSoftDepends() {
-        return softDepend;
+    public List<String> getSoftDependencies() {
+        return softDependencies;
+    }
+
+    public double getWeight() {
+        return weight;
     }
 
     public boolean isLoadAsync() {
@@ -77,14 +80,6 @@ public abstract class AetherPlugin extends Plugin {
 
     public boolean isUnloadAsync() {
         return unloadAsync;
-    }
-
-    public List<String> getDepend() {
-        return depend;
-    }
-
-    public List<String> getSoftDepend() {
-        return softDepend;
     }
 
     public boolean isEnabled() {
@@ -119,12 +114,12 @@ public abstract class AetherPlugin extends Plugin {
         this.logger = logger;
     }
 
-    protected void setDepend(List<String> depend) {
-        this.depend = depend;
+    protected void setDependencies(List<String> dependencies) {
+        this.dependencies = dependencies;
     }
 
-    protected void setSoftDepend(List<String> softDepend) {
-        this.softDepend = softDepend;
+    protected void setSoftDependencies(List<String> softDependencies) {
+        this.softDependencies = softDependencies;
     }
 
     protected void setLoadAsync(boolean loadAsync) {
@@ -137,6 +132,10 @@ public abstract class AetherPlugin extends Plugin {
 
     protected void setLoaded(boolean loaded) {
         this.loaded = loaded;
+    }
+
+    protected void setWeight(double weight) {
+        this.weight = weight;
     }
 
     protected void setClassLoader(PluginClassLoader classLoader) {

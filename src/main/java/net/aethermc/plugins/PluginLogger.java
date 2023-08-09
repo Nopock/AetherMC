@@ -8,6 +8,6 @@ import org.jetbrains.annotations.NotNull;
 public class PluginLogger extends AetherLogger {
 
     public PluginLogger(@NotNull String prefix) {
-        super("Plugin");
+        super(prefix);
     }
 }

@@ -21,7 +21,6 @@ public class WorldGeneration {
                 for (int z = 0; z < unit.size().z(); z++) {
                     Point bottom = start.add(x, 0, z);
                     double height = noise.evaluateNoise(bottom.x(), bottom.z()) * 64;
-                    unit.modifier().fillHeight(-64, 46, Block.WATER);
                     unit.modifier().fill(bottom, bottom.add(1, 0, 1).withY(height), Block.GRASS_BLOCK);
                 }
             }
