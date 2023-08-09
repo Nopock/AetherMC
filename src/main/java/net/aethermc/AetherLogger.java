@@ -25,12 +25,46 @@ public class AetherLogger {
     public static final DateTimeFormatter dataFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     public static final String LOGGER_FORMAT = "%s[%s] %s: %s";
 
+    private String prefix;
+
+    public AetherLogger(String prefix) {
+        this.prefix = prefix;
+    }
+
     private String getFormattedTime() {
         return dataFormatter.format(LocalDateTime.now());
     }
 
     public void log(Level level, String log) {
-        System.out.println(String.format(LOGGER_FORMAT, level.getColor(), getFormattedTime(), level, log));
+        System.out.println(String.format(LOGGER_FORMAT + "\033[0m", level.getColor(), getFormattedTime(), level, log));
+    }
+
+    public void info(String log) {
+        log(Level.INFO, log);
+    }
+
+    public void warning(String log) {
+        log(Level.WARNING, log);
+    }
+
+    public void severe(String log) {
+        log(Level.SEVERE, log);
+    }
+
+    public void config(String log) {
+        log(Level.CONFIG, log);
+    }
+
+    public void success(String log) {
+        log(Level.SUCCESS, log);
+    }
+
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
     }
 
     /**
@@ -40,6 +74,7 @@ public class AetherLogger {
         INFO("\033[0m"),
         CONFIG("\033[0m"),
         WARNING("\033[0;31m"),
+        SUCCESS("\033[0;32m"),
         SEVERE("\033[1;31m");
 
         private final String color;

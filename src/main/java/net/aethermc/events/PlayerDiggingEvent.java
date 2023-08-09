@@ -1,5 +1,6 @@
 package net.aethermc.events;
 
+import net.aethermc.AetherMC;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.trait.BlockEvent;
 import net.minestom.server.event.trait.CancellableEvent;
@@ -9,6 +10,7 @@ import net.minestom.server.instance.block.BlockFace;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+@AetherMC(since = "1.0.0-snapshot.3")
 public class PlayerDiggingEvent implements PlayerInstanceEvent, BlockEvent, CancellableEvent {
 
     private final Player player;

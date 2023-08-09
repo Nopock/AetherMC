@@ -54,16 +54,16 @@ public class EventListener {
         });
 
         // directional blocks
-        handler.addListener(PlayerBlockPlaceEvent.class, event -> {
-            final Player player = event.getPlayer();
-            final Block block = event.getBlock();
-
-            if (block.getProperty("facing") != null) {
-                FacingState playerState = FacingState.get(player.getPosition().direction());
-                if (playerState == null) return;
-
-                event.setBlock(block.withProperty("facing", playerState.name().toLowerCase()));
-            }
-        });
+//        handler.addListener(PlayerBlockPlaceEvent.class, event -> {
+//            final Player player = event.getPlayer();
+//            final Block block = event.getBlock();
+//
+//            if (block.getProperty("facing") != null) {
+//                FacingState playerState = FacingState.get(player.getPosition().direction());
+//                if (playerState == null) return;
+//
+//                event.setBlock(block.withProperty("facing", playerState.name().toLowerCase()));
+//            }
+//        });
     }
 }

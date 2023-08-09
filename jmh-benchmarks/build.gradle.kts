@@ -1,10 +1,9 @@
 plugins {
-    id("me.champeau.jmh") version ("0.6.6")
-    id("minestom.common-conventions")
+    id("me.champeau.jmh") version ("0.7.1")
 }
 
 dependencies {
-    jmhImplementation(rootProject)
-    jmh(libs.jmh.core)
-    jmhAnnotationProcessor(libs.jmh.annotationprocessor)
+    jmh("org.openjdk.jmh:jmh-core:0.9")
+    jmh("org.openjdk.jmh:jmh-generator-annprocess:0.9")
+    implementation(rootProject)
 }

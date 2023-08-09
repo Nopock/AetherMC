@@ -1,0 +1,9 @@
+aether-settings:
+  async-loading: true # default false
+  async-unloading: true # default false
+
+name: Glass
+description: A plugin that adds glass to the game. (totally)
+version: 1.0.0
+main: com.example.glass.GlassPlugin
+author: Example

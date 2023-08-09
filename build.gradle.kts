@@ -28,6 +28,8 @@ allprojects {
 
     dependencies {
         implementation("de.articdive:jnoise-pipeline:4.0.0")
+        implementation("com.esotericsoftware.yamlbeans:yamlbeans:1.15")
+
     }
 
     java {

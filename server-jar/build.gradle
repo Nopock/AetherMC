@@ -13,5 +13,9 @@ shadowJar {
         attributes 'Main-Class': 'org.aethermc.Main',
             "Multi-Release": "true"
     }
+    archiveBaseName.set('AetherMC-Server-dev-all')
+    archiveClassifier.set('')
+    archiveVersion.set('')
+
     destinationDirectory = file("D:\\AetherMC")
 }

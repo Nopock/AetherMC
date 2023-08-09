@@ -29,10 +29,6 @@ public final class Aether {
     public static final CommandManager commandManager = MinecraftServer.getCommandManager();
     public static final ConnectionManager connectionManager = MinecraftServer.getConnectionManager();
 
-    public Aether() {
-        throw new UnsupportedOperationException("This class cannot be instantiated");
-    }
-
     public static @Nullable Player getPlayer(@NotNull String string) {
         return getConnectionManager().getPlayer(string);
     }
@@ -87,10 +83,6 @@ public final class Aether {
     }
 
 
-    public static PluginManager getPluginManager() {
-        return new PluginManager();
-    }
-
     public static InstanceContainer getInstanceContainer() {
         return instanceContainer;
     }
@@ -108,6 +100,6 @@ public final class Aether {
     }
 
     public static AetherLogger getLogger() {
-        return new AetherLogger();
+        return new AetherLogger("[AetherMC]");
     }
 }

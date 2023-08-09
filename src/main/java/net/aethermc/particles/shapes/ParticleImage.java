@@ -72,9 +72,9 @@ public class ParticleImage implements ParticleShape {
                     for (int y = 0; y < loopLimitY; y++) {
                         int pixelColor = image.getRGB((int) (x * scale), (int) (y * scale));
 
-                        int red = (pixelColor >> 16) & 0xFF;
-                        int green = (pixelColor >> 8) & 0xFF;
-                        int blue = pixelColor & 0xFF;
+                        int red = (pixelColor >> 16) & 0xFF; // 255
+                        int green = (pixelColor >> 8) & 0xFF; // 255
+                        int blue = pixelColor & 0xFF; // 255
 
                         double locX = x - ((double) loopLimitX / 2) * scale;
                         double locY = y - ((double) loopLimitY / 2) * scale;
